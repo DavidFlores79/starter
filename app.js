@@ -8,6 +8,7 @@ require('dotenv').config();
 dbConnection();
 
 //middleware
+app.use(express.static('./public'));
 app.use(express.json());
 
 //routes
