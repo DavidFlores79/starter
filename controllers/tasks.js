@@ -49,7 +49,7 @@ const updateTask = async (req, res) => {
 
     try {
         
-        const data = await Task.findByIdAndUpdate(id, { ...updatedData }, { new: true });
+        const data = await Task.findByIdAndUpdate(id, { ...updatedData }, { new: true, runValidators: true });
         if (!data) return res.status(404).json({ msg: `There is no records with the id ${id}` });
 
         res.send({
